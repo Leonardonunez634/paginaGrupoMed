@@ -1,0 +1,225 @@
+/*Seccion toda la pagina*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    padding:0;
+}
+li{
+    list-style: none;
+}
+
+
+/*maquetado Grid*/
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.hijo-grid{
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+/* ----- Clases menu de navegacion -------*/
+.header{
+    grid-area: header;
+    max-width: 100%;
+    min-height: 50px;
+    background-color: aquamarine;
+}
+.menu{
+    background-color: beige;
+    display: flex;
+    justify-content: space-between; /*Esta funcion es la que se usa para espaciar al maximo entre los elementos dentro del contenedor*/
+    padding: 10px 5%;
+    align-items: center;
+}
+.logo-nombre{
+    display: flex;
+    align-items: center;
+    gap: 10px; /*Con esto busco separar el nombre del logo*/
+}
+.lista-menu{
+    display: flex; /*solo quise que sean flexbox y que esten alineados horizontalmente*/
+}
+.item-lista-menu{
+    margin: 0 3vh;
+}
+/* ---- main (contenido) ------------------*/
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+.seccion-main{
+    background-color: aqua;
+
+}
+/* -------- inicio de la pag --------*/
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: calc(100vh - 2vh);
+    background-image: url("https://i.pinimg.com/originals/ca/42/71/ca4271ae604c068e91c7b261837e11ea.jpg");
+    background-size: cover;
+    padding: 0 0 3% 2%;
+}
+.texto-animado-banner{
+    display: flex;
+    position: relative;
+    margin-bottom: 3%;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: orange;
+    padding: 3px 2px;
+
+}
+/* . . . . . . . .  nueva seccion  (4). . . . . . . . . . . . */
+#nuestas-especialidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-cartas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    min-height: 40vh;
+    min-width: 200px;
+    padding: 20px 15px;
+    background-color: coral;
+}
+.slider-carta{
+    position: absolute; /*Hay que modificar esto en la media querry*/
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 150px;
+    height: 250px;
+    background-color: #350;
+
+}
+/* - - - - - - - Funcionalidad botones - - - - - - - - - */
+.botom{
+    position:absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.botton-siguiente{
+    order: 2;
+}
+.boton-anterior{
+    transform: rotate(180deg);
+    order: 2;
+}
+/* . . . . . . . .  nueva seccion  (2). . . . . . . . . . . . */
+/* . . . . . . . .  nueva seccion  (3). . . . . . . . . . . . */
+#quienes-somos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+}
+.contenendor-persons-cards{
+
+    max-width: 1000px;
+    display: flex;
+    background-color: #fff;
+    flex-wrap: wrap;
+    padding-bottom: 2.5vh;
+    justify-content: center;
+    
+}
+.person-card{
+    position: relative;
+    display: flex;
+    background-color: #555;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 28px;
+    padding: 20px 5px;
+    width: 250px;
+    height:300px;
+    border-radius: 6%;
+    box-shadow: 0px 20px 30px  rgba(0, 0, 0, 0.7);
+}
+
+/*Contenido dentro de las cartas persona*/
+
+.contenedor-img{
+    box-sizing: content-box;
+    border: 2.5px #fff solid;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    transform: translateY(50px);
+    z-index: 1;
+}
+.contenedor-img img{
+  width: 100px;
+  height:120px;
+}
+.person-card h4{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    transform: translateY(50px);
+    z-index: 1;
+}
+.person-card ul{
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    transform: translateY(300px);
+    z-index: 1;
+}
+
+.fondo-animado{
+    position: absolute;
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    transform: translate(-200px ,200px);
+
+}
+/* funcion para cuando el mouse pase por encima de la carta de la persona*/
+.person-card:hover .fondo-animado{
+    transform: scale(4);
+    top: 90px;
+    transition: 0.3s;
+}
+.person-card:hover .contenedor-img{
+    transition: 0.5s;
+    transform: translateY(0);
+}
+.person-card:hover h4{
+    transition: 0.5s;
+    transform: translateY(0);
+}
+.person-card:hover ul{
+    transition: 0.5s;
+    transform: translateY(0);
+}
+/* -------Pie de pagina ----------------*/
+.pie-de-pagina{
+    background-color: blueviolet;
+}
